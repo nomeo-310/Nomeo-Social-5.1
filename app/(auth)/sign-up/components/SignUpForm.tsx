@@ -47,7 +47,7 @@ const SignUpForm = () => {
   return (
     <form noValidate onSubmit={handleSubmit(onSubmit)} className='relative'>
       <div className="absolute -right-2 -top-2 z-50">
-        <div className="w-20 h-20 lg:w-24 lg:h-24 overflow-hidden flex items-center justify-center">
+        <div className="w-16 h-16 lg:w-24 lg:h-24 overflow-hidden flex items-center justify-center">
           <Image src={'/images/app_logo.png'} priority alt='app-logo' className='object-contain' fill />
         </div>
       </div>
