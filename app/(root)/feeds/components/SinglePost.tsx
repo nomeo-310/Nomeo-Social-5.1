@@ -21,7 +21,7 @@ const SinglePost = ({post, userId, index}: singlePostProps) => {
       <Card>
         <SinglePostHeader post={post} userId={userId}/>
         <SinglePostContent post={post}/>
-        <hr className='-mx-4'/>
+        <hr className='lg:-mx-4 -mx-3'/>
         <SinglePostControls post={post} userId={userId}/>
       </Card>
     </AnimationWrapper>

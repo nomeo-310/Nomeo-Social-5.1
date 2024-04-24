@@ -13,6 +13,7 @@ import { signInSchema } from '@/utils/validationSchemas'
 import { signIn } from 'next-auth/react'
 import { toast } from 'sonner'
 import { useRouter, useSearchParams } from 'next/navigation'
+import Image from 'next/image'
 
 type Props = {}
 
@@ -31,7 +32,7 @@ const SignInForm = (props: Props) => {
     signIn('credentials', {...data, redirect: false})
     .then((callback) => {
       if (callback?.ok) {
-        toast.success("Succesfull Logged In");
+        toast.success("Succesfully Logged In");
         router.refresh();
         router.push(next ? next : "/");
       }
@@ -44,7 +45,12 @@ const SignInForm = (props: Props) => {
   }
 
   return (
-    <form autoComplete='off' noValidate onSubmit={handleSubmit(onSubmit)}>
+    <form autoComplete='off' noValidate onSubmit={handleSubmit(onSubmit)} className='relative'>
+      <div className="absolute -right-2 -top-2 z-50">
+        <div className="w-20 h-20 lg:w-24 lg:h-24 overflow-hidden flex items-center justify-center">
+          <Image src={'/images/app_logo.png'} fill priority alt='app-logo'/>
+        </div>
+      </div>
       <div className='mb-10'>
         <h2 className='lg:text-4xl text-3xl mb-1'>Login to your account</h2>
         <p>Don&apos;t have an account yet? <Link href={'/sign-up'} className='underline'>Create one right away</Link></p>
@@ -70,7 +76,7 @@ const SignInForm = (props: Props) => {
         id='password'
         error={errors.password?.message as string}
       />
-      <Button className='mt-5 text-xl' type='submit'>Login</Button>
+      <Button className='bg-green-600 mt-5 text-xl' type='submit'>Login</Button>
       <hr className='my-5'/>
       <Button className='px-10 bg-white text-black text-xl font-semibold' type='button' onClick={() => signIn('google')}>
         <div className="flex gap-x-4 items-center justify-center">

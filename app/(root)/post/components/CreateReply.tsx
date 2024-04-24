@@ -58,7 +58,7 @@ const CreateReply = ({comment, currentUser, post, path}:{comment:singleComment, 
           onChange={(event) => setReplyText(event.target.value)}
         />
         <div>
-          <button className='bg-blue-500 py-2 px-6 rounded-full text-white' onClick={() => handleCreateReply()}>Reply</button>
+          <button className='bg-green-600 py-2 px-6 rounded-full text-white' onClick={() => handleCreateReply()}>Reply</button>
         </div>
       </div>
     </div>

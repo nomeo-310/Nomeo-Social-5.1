@@ -38,7 +38,7 @@ const NotificationCard = ({index, active, notification}: notificationCardProps) 
 
   return (
     <AnimationWrapper key={index} transition={{duration: 1, delay: index*0.5}} keyValue={`${index}`} className='border-b last:border-b-0 relative'>
-      <div className={active ? 'border-l-blue-500 border-l-[6px] text-blue-500 flex gap-3 p-2 group':  'group p-2 flex gap-3'}>
+      <div className={active ? 'border-l-green-600 border-l-[6px] text-green-600 flex gap-3 p-2 group':  'group p-2 flex gap-3'}>
         {!notification.isBarred ?
           <div className="w-fit">
             <ImageAvatar className='w-10 h-10' imageSrc={notificationCreatedBy.image as string}/>
@@ -48,9 +48,9 @@ const NotificationCard = ({index, active, notification}: notificationCardProps) 
           </div>
         }
         <div className="grow">
-          <p className={active ? 'text-blue-500 line-clamp-1': 'text-gray-400 line-clamp-1'}>
-          {!notification.isBarred && <span className={active ? 'font-semibold text-blue-500': 'font-semibold text-black'}>{notificationCreatedBy.name}</span>} 
-            <Link href={`/profile/${notificationCreatedBy._id}`} className={active ? 'underline text-blue-500 ml-2': 'underline text-black ml-2'}>{!notification.isBarred && notificationCreatedBy.username}</Link>
+          <p className={active ? 'text-green-600 line-clamp-1': 'text-gray-400 line-clamp-1'}>
+          {!notification.isBarred && <span className={active ? 'font-semibold text-green-600': 'font-semibold text-black'}>{notificationCreatedBy.name}</span>} 
+            <Link href={`/profile/${notificationCreatedBy._id}`} className={active ? 'underline text-green-600 ml-2': 'underline text-black ml-2'}>{!notification.isBarred && notificationCreatedBy.username}</Link>
             { 
               notification.isLikedComment ? <span className='ml-2'>liked your comment on</span> : 
               notification.isComment ? <span className='ml-2'>comment on your post</span> : 
@@ -60,7 +60,7 @@ const NotificationCard = ({index, active, notification}: notificationCardProps) 
               notification.isLiked ? <span className='ml-2'>liked your post</span> : ''
             }
           </p>
-          <p className=''><Link href={`/post/${post._id}`} className={active ? 'text-blue-500 line-clamp-1 mt-1 underline': 'line-clamp-1 mt-1 underline'}>&ldquo;{post.postText }&rdquo;</Link></p>
+          <p className=''><Link href={`/post/${post._id}`} className={active ? 'text-green-600 line-clamp-1 mt-1 underline': 'line-clamp-1 mt-1 underline'}>&ldquo;{post.postText }&rdquo;</Link></p>
         </div>
         <button className='p-2 rounded-full bg-red-300 absolute right-2 lg:top-3 top-2 opacity-0 group-hover:opacity-100 hover:scale-110' onClick={() => deleteNotification(notification._id)}>
           <HiOutlineTrash size={18} />

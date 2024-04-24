@@ -20,7 +20,7 @@ const SinglePostControls = ({post, userId}:{post:singlePostData, userId:string})
         {post.totalComments > 0 && <span>{post.totalComments} {post.totalComments > 1 ? 'comments' : 'comment'} </span>}
       </Link>
       <div className="flex gap-1 items-center">
-        { alreadySavedPost ? <HiBookmark size={20} className='text-blue-500'/> : <HiOutlineBookmark size={20}/> }
+        { alreadySavedPost ? <HiBookmark size={20} className='text-grren-600'/> : <HiOutlineBookmark size={20}/> }
         { post.totalSaves > 0 && <span>{post.totalSaves} {post.totalSaves > 1 ? 'saves' : 'save'} </span>}
       </div>
       <div className="flex gap-1 items-center">

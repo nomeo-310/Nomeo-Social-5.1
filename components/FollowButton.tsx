@@ -44,11 +44,11 @@ const FollowButton = ({currentUser, userId, className}: followButtonProps) => {
   return (
     <React.Fragment>
       {followingAlready ?
-        <button className={twMerge('text-white px-4 bg-blue-500 py-1 mt-2 rounded-full flex items-center gap-4', className)} onClick={() => handleFollowUser()}>
+        <button className={twMerge('text-white px-4 bg-green-600 py-1 mt-2 rounded-full flex items-center gap-4', className)} onClick={() => handleFollowUser()}>
           <BsPersonDashFill size={20}/>
           Unfollow
         </button> :
-        <button className={twMerge('text-white px-4 bg-blue-500 py-1 mt-2 rounded-full flex items-center gap-4', className)} onClick={() => handleFollowUser()}>
+        <button className={twMerge('text-white px-4 bg-green-600 py-1 mt-2 rounded-full flex items-center gap-4', className)} onClick={() => handleFollowUser()}>
           <BsPersonPlusFill size={20}/>
           Follow
         </button>

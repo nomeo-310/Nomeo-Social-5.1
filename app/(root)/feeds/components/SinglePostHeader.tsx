@@ -28,7 +28,7 @@ const SinglePostHeader = ({post, userId}:{post:singlePostData, userId:string}) =
                 <ImageAvatar onClick={() => router.push(`/profile/${repostAuthor._id}`)} className='cursor-pointer' imageSrc={repostAuthor.image}/>
               </div>
               <div className="flex flex-col">
-                <p><span className='capitalize'>{repostAuthor.name}</span> <span className='text-blue-500'>repost</span></p>
+                <p><span className='capitalize'>{repostAuthor.name}</span> <span className='text-green-600'>repost</span></p>
                 <p className='text-gray-500'>{getTimeFormat(post.createdAt).distance} {post.postLocation ? post.postLocation : ''}.</p>
               </div>
             </div>
@@ -43,7 +43,7 @@ const SinglePostHeader = ({post, userId}:{post:singlePostData, userId:string}) =
                 <ImageAvatar onClick={() => router.push(`/profile/${postAuthor._id}`)} className='cursor-pointer' imageSrc={postAuthor.image}/>
               </div>
               <div className="flex flex-col">
-                <p><span className='capitalize'>{postAuthor.name}</span>&apos;s <span className='text-blue-500'>post</span></p>
+                <p><span className='capitalize'>{postAuthor.name}</span>&apos;s <span className='text-green-600'>post</span></p>
               </div>
             </div>
           </div>
@@ -54,7 +54,7 @@ const SinglePostHeader = ({post, userId}:{post:singlePostData, userId:string}) =
               <ImageAvatar onClick={() => router.push(`/profile/${postAuthor._id}`)} className='cursor-pointer' imageSrc={postAuthor.image}/>
             </div>
             <div className="flex flex-col">
-              <p><span className='capitalize'>{postAuthor.name}</span> shared a <span className='text-blue-500'>post</span></p>
+              <p><span className='capitalize'>{postAuthor.name}</span> shared a <span className='text-green-600'>post</span></p>
               <p className='text-gray-500'>{getTimeFormat(post.createdAt).distance} {post.postLocation ? post.postLocation : ''}.</p>
             </div>
           </div>

@@ -4,7 +4,6 @@ import React from 'react'
 import { rawUserData, singleImageData, singlePostData, userFriends } from '@/types'
 import ProfileHeader from './ProfileHeader'
 import ProfileContent from './ProfileContent'
-import { testImages } from './data'
 
 type profileClientProps = {
   user:rawUserData

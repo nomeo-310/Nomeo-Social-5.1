@@ -36,7 +36,7 @@ const SingleComment = ({comment, currentUser, post, path}:{comment:singleComment
       toast.error('Internal server error')
     }
 
-  }, [])
+  }, [comment._id, path, currentUser._id])
 
   return (
     <div className='flex gap-2 pt-3' >

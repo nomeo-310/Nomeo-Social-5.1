@@ -106,13 +106,13 @@ const ProfileContent = ({user, activeTab, userPosts, userReposts, currentUser, u
       {activeTab === 'posts' && 
         <React.Fragment>
           <Card className='w-fit py-3 px-6 rounded-full flex gap-3 cursor-pointer'>
-            <div className={postState === 'posts' ? 'text-blue-500 font-semibold flex items-center gap-6': ' flex items-center gap-6'} onClick={() => setPostState('posts')}>
+            <div className={postState === 'posts' ? 'text-green-600 font-semibold flex items-center gap-6': ' flex items-center gap-6'} onClick={() => setPostState('posts')}>
               Posts
-              {userPosts && userPosts.length > 0 && <span className='w-6 h-6 rounded-full flex items-center justify-center text-white bg-blue-500'>{userPosts.length}</span>}
+              {userPosts && userPosts.length > 0 && <span className='w-6 h-6 rounded-full flex items-center justify-center text-white bg-green-600'>{userPosts.length}</span>}
             </div>
-            <div className={postState === 'reposts' ? 'text-blue-500 font-semibold border-l pl-3 flex items-center gap-6': 'border-l pl-3 flex items-center gap-6'} onClick={() => setPostState('reposts')}>
+            <div className={postState === 'reposts' ? 'text-green-600 font-semibold border-l pl-3 flex items-center gap-6': 'border-l pl-3 flex items-center gap-6'} onClick={() => setPostState('reposts')}>
               Reposts
-              {userReposts && userReposts.length > 0 && <span className='w-6 h-6 rounded-full flex items-center justify-center text-white bg-blue-500'>{userReposts.length}</span>}
+              {userReposts && userReposts.length > 0 && <span className='w-6 h-6 rounded-full flex items-center justify-center text-white bg-green-600'>{userReposts.length}</span>}
             </div>
           </Card>
           { postState === 'posts' ?
@@ -139,13 +139,13 @@ const ProfileContent = ({user, activeTab, userPosts, userReposts, currentUser, u
       {activeTab === 'friends' && 
         <React.Fragment>
           <Card className='w-fit py-3 px-6 rounded-full flex gap-3 cursor-pointer'>
-            <div onClick={() => setFriendState('followers')} className={friendState === 'followers' ? 'text-blue-500 font-semibold flex items-center gap-6': 'flex items-center gap-6'}>
+            <div onClick={() => setFriendState('followers')} className={friendState === 'followers' ? 'text-green-600 font-semibold flex items-center gap-6': 'flex items-center gap-6'}>
               Followers
-              {userFriends.followers.length > 0 && <span className='w-6 h-6 rounded-full flex items-center justify-center text-white bg-blue-500'>{userFriends.followers.length}</span>}
+              {userFriends?.followers && userFriends.followers.length > 0 && <span className='w-6 h-6 rounded-full flex items-center justify-center text-white bg-green-600'>{userFriends.followers.length}</span>}
             </div>
-            <div className={friendState === 'followings' ? 'text-blue-500 font-semibold border-l pl-3 flex items-center gap-6': 'border-l pl-3 flex items-center gap-6'} onClick={() => setFriendState('followings')}>
+            <div className={friendState === 'followings' ? 'text-green-600 font-semibold border-l pl-3 flex items-center gap-6': 'border-l pl-3 flex items-center gap-6'} onClick={() => setFriendState('followings')}>
               Followings
-              {userFriends.followings.length > 0 && <span className='w-6 h-6 rounded-full flex items-center justify-center text-white bg-blue-500'>{userFriends.followings.length}</span>}
+              {userFriends.followings && userFriends.followings.length > 0 && <span className='w-6 h-6 rounded-full flex items-center justify-center text-white bg-green-600'>{userFriends.followings.length}</span>}
             </div>
           </Card>
           { friendState === 'followers' ?

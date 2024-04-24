@@ -14,6 +14,7 @@ import { createUser } from '@/actions/user.actions'
 import { toast } from 'sonner'
 import { useRouter } from 'next/navigation'
 import { signIn } from 'next-auth/react'
+import Image from 'next/image'
 
 
 const SignUpForm = () => {
@@ -44,7 +45,12 @@ const SignUpForm = () => {
   }
 
   return (
-    <form noValidate onSubmit={handleSubmit(onSubmit)}>
+    <form noValidate onSubmit={handleSubmit(onSubmit)} className='relative'>
+      <div className="absolute -right-2 -top-2 z-50">
+        <div className="w-20 h-20 lg:w-24 lg:h-24 overflow-hidden flex items-center justify-center">
+          <Image src={'/images/app_logo.png'} priority alt='app-logo' className='object-contain' fill />
+        </div>
+      </div>
       <div className='mb-6'>
         <h2 className='lg:text-4xl text-3xl mb-1'>Create an account</h2>
         <p>Already have an account? <Link href={'/sign-in'} className='underline'>Go ahead and login</Link></p>
@@ -80,7 +86,7 @@ const SignUpForm = () => {
         id='password'
         error={errors.password?.message as string}
       />
-      <Button className='mt-5 text-xl' type='submit'>Create Account</Button>
+      <Button className='mt-5 text-xl bg-green-600' type='submit'>Create Account</Button>
       <hr className='my-5'/>
       <Button className='px-10 bg-white text-black text-xl font-semibold' type='button' onClick={() => signIn('google')}>
         <div className="flex gap-x-4 items-center justify-center">

@@ -189,7 +189,7 @@ const EditProfileClient = ({currentUser}: editProileProps) => {
               <button className='relative z-10 p-3 bg-red-500 text-white rounded-full' onClick={deleteUploadedCoverImage}>
                 <HiXMark size={20}/>
               </button>}
-            <button className='relative z-10 p-3 bg-blue-500 text-white rounded-full' onClick={handleUploadCoverImage}>
+            <button className='relative z-10 p-3 bg-green-600 text-white rounded-full' onClick={handleUploadCoverImage}>
               <HiCloudArrowUp size={20}/>
             </button>
           </div>
@@ -214,7 +214,7 @@ const EditProfileClient = ({currentUser}: editProileProps) => {
                 <HiXMark size={20}/>
               </button>
             }
-              <button className='p-3 bg-blue-500 text-white rounded-full' onClick={handleUploadProfileImage}>
+              <button className='p-3 bg-green-600 text-white rounded-full' onClick={handleUploadProfileImage}>
                 <HiCloudArrowUp size={20}/>
               </button>
             </div>
@@ -340,7 +340,7 @@ const EditProfileClient = ({currentUser}: editProileProps) => {
           placeholder='add your bio'
         />
       </Card>
-      <button className='px-8 py-3 bg-blue-500 text-white mt-8 rounded-full' onClick={updateUserProfile}>
+      <button className='px-8 py-3 bg-green-600 text-white mt-8 rounded-full' onClick={updateUserProfile}>
         {isLoading ? 'Updating profile...' : 'Update profile'}
       </button>
     </React.Fragment>

@@ -135,7 +135,7 @@ const CreatePost = ({currentUser}: createPostProps) => {
               <button className='p-3 bg-red-500 text-white rounded-full' onClick={cancel}>
                 <HiXMark size={20}/>
               </button>
-              <button className='px-6 py-2 bg-blue-500 text-white rounded-full' onClick={() =>handleUploadImageFile()}>
+              <button className='px-6 py-2 bg-green-600 text-white rounded-full' onClick={() =>handleUploadImageFile()}>
                 <HiCloudArrowUp size={20}/>
               </button>
             </div>
@@ -153,21 +153,21 @@ const CreatePost = ({currentUser}: createPostProps) => {
         </div>
         <div className='flex items-center justify-between'>
           <div className='flex items-center gap-4'>
-            <button className={`flex items-center gap-2 ${mood ? 'text-blue-500 font-semibold' : ''}`} onClick={() => setMood((prevState) => !prevState)}>
+            <button className={`flex items-center gap-2 ${mood ? 'text-green-600 font-semibold' : ''}`} onClick={() => setMood((prevState) => !prevState)}>
               <HiOutlineFaceSmile size={22}/>
               <h2>Mood</h2>
             </button>
-            <button className={`flex items-center gap-2 ${checkedIn ? 'text-blue-500 font-semibold' : ''}`} onClick={() => setCheckedIn((prevState) => !prevState)}>
+            <button className={`flex items-center gap-2 ${checkedIn ? 'text-green-600 font-semibold' : ''}`} onClick={() => setCheckedIn((prevState) => !prevState)}>
               <HiOutlineMapPin size={22}/>
               <h2>Check in</h2>
             </button>
-            <label htmlFor="uploadPostImage" className={`flex items-center gap-2 cursor-pointer ${imageSelected ? 'text-blue-500 font-semibold' : ''}`}>
+            <label htmlFor="uploadPostImage" className={`flex items-center gap-2 cursor-pointer ${imageSelected ? 'text-green-600 font-semibold' : ''}`}>
               <HiOutlinePhoto size={22}/>
               <h2>Image</h2>
               <input id="uploadPostImage" type="file" accept=".png, .jpg, .jpeg"  hidden  className="cursor-pointer"  onChange={handleImageFileChange} />
             </label>
           </div>
-          <button className='px-5 py-1.5 rounded-full bg-blue-500 text-white' onClick={handleCreatePost} disabled={isLoading}>{isLoading ? 'Creating post...' : 'Share'}</button>
+          <button className='px-5 py-1.5 rounded-full bg-green-600 text-white' onClick={handleCreatePost} disabled={isLoading}>{isLoading ? 'Creating post...' : 'Share'}</button>
         </div>
       </div>
     </Card>

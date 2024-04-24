@@ -74,7 +74,7 @@ const NavigationClient = ({currentUser, notificationCount}: navigationClientProp
         <h2 className='mb-8 text-3xl text-semibold text-gray-400 mt-3'>Navigation</h2>
         <div className='flex items-center justify-between -mx-4 pb-4 px-4 cursor-pointer'>
           <ImageAvatar className='hover:opacity-75'  onClick={() =>route.push(`/profile/${currentUser?._id}`)} imageSrc={currentUser?.image}/>
-          <button className='flex items-center gap-x-2 py-3 px-6 rounded-full border hover:bg-blue-500 hover:text-white border-blue-500 text-blue-500' onClick={() => signOut()}>
+          <button className='flex items-center gap-x-2 py-3 px-6 rounded-full border hover:bg-green-600 hover:text-white border-green-600 text-green-600' onClick={() => signOut()}>
             <p className='lg:text-lg font-semibold'>Signout</p>
             <HiArrowLeftOnRectangle size={26}/>
           </button>
@@ -121,7 +121,7 @@ const NavigationClient = ({currentUser, notificationCount}: navigationClientProp
     }
 
     return (
-      <button onClick={() => handleClick(href)} className={twMerge('flex items-center gap-2 hover:text-blue-500 text-gray-400', ( active && 'group p-2 rounded-full text-white bg-blue-500 hover:bg-blue-500 hover:text-white'))}>
+      <button onClick={() => handleClick(href)} className={twMerge('flex items-center gap-2 hover:text-green-600 text-gray-400', ( active && 'group p-2 rounded-full text-white bg-green-600 hover:bg-green-600 hover:text-white'))}>
         <Icon size={21}/>
         <h2 className='font-semibold'>{label}</h2>
       </button>
@@ -139,7 +139,7 @@ const NavigationClient = ({currentUser, notificationCount}: navigationClientProp
           <SearchBar/>
           <div className='flex items-center gap-3'>
             <ImageAvatar className='hover:opacity-75 w-12 h-12 cursor-pointer' onClick={() =>route.push(`/profile/${currentUser?._id}`)} imageSrc={currentUser?.image}/>
-            <button className='flex items-center gap-x-2 bg-white py-3 px-6 rounded-full shadow-md hover:bg-blue-500 hover:text-white border-blue-500' onClick={() =>signOut()}>
+            <button className='flex items-center gap-x-2 bg-white py-3 px-6 rounded-full shadow-md hover:bg-green-600 hover:text-white border-green-600' onClick={() =>signOut()}>
               <p className='font-semibold'>Signout</p>
               <HiArrowLeftOnRectangle size={26}/>
             </button>

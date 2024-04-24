@@ -62,7 +62,7 @@ const CreateComment = ({currentUser, path, post}:{currentUser:rawUserData, post:
           onChange={(event) => setCommentText(event.target.value)}
         />
         <div>
-          <button className='bg-blue-500 py-2 px-6 rounded-full text-white' onClick={() =>handleCreateComment()}>Comment</button>
+          <button className='bg-green-600 py-2 px-6 rounded-full text-white' onClick={() =>handleCreateComment()}>Comment</button>
         </div>
       </div>
     </div>

@@ -166,14 +166,11 @@ export type followDataProps =     {
   country: string
   image: string
   username: string
-  followers: string[]
-  followings: string[]
 }
 
 export type userFriends = {
-  followers: followDataProps[]
-  followings: followDataProps[]
-  error: string
+  followers: followDataProps[] | null
+  followings: followDataProps[] | null
 }
 
 export type singleComment = {

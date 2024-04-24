@@ -32,7 +32,7 @@ const ProfileHeader = ({user, userLoggedIn, currentUser,activeTab, handleClick}:
           <p className='lg:text-xl font-semibold text-gray-400 capitalize'>{user.state}, {user.country}.</p>
         </div>
         { userLoggedIn ?
-          <Link href={'/editprofile'} className='text-white px-3 bg-blue-500 py-1 mt-2 rounded-full flex items-center gap-2 hover:bg-blue-400'>
+          <Link href={'/editprofile'} className='text-white px-3 bg-green-600 py-1 mt-2 rounded-full flex items-center gap-2 hover:bg-blue-400'>
             <BsPersonFillGear size={20}/>
             Edit Profile
           </Link> :

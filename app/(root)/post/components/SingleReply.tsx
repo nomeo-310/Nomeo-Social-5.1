@@ -32,7 +32,7 @@ const SingleReply = ({comment, currentUser}:{comment:singleComment, currentUser:
       toast.error('Internal server error')
     }
 
-  }, [])
+  }, [comment._id, path, currentUser._id])
   
   return (
     <div className='flex gap-2 pt-3 w-full' >
