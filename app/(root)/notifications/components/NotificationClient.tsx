@@ -46,10 +46,10 @@ const NotificationClient = ({notifications}:{notifications: notificationProps[]}
 
   return (
     <React.Fragment>
-      <div className='w-full flex justify-between items-center'>
+      <div className='w-full flex justify-between items-center sticky md:top-4 top-20 z-30 bg-white'>
         <h2 className='lg:text-6xl text-4xl font-bold text-gray-400 mb-4'>Notifications</h2>
         { notifications && notifications.length > 0 && 
-          <button className='px-4 py-2 rounded-full flex gap-2 items-center bg-red-200 transition-all hover:bg-red-300' onClick={() => deleteNotification()}> 
+          <button className='px-4 py-2 rounded-full flex gap-2 items-center bg-red-200 transition-all hover:bg-red-300 hover:scale-110' onClick={() => deleteNotification()}> 
             Clear all <HiOutlineTrash/>
           </button> 
         }

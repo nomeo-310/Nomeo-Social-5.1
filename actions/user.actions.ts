@@ -217,7 +217,7 @@ export const fetchSuggestedUsers = async () => {
   try {
     const users = await User.find({_id: {$nin: followings}, name: {$ne: currentUser.name}})
     .select('_id name occupation state country image username')
-    .sort({'totalFollowers':-1, 'totalFollowings':-1, 'createdAt':-1 })
+    .sort({totalFollowers:1, totalFollowings:1, createdAt:1, totalCreatedPosts: 1})
 
     if (!users) {
       return [];

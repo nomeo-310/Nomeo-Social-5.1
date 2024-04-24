@@ -27,17 +27,19 @@ const SearchClient = ({searchResults, currentUser}:{searchResults:rawUserData[],
 
   return (
     <React.Fragment>
-      <h2 className='lg:text-6xl text-4xl font-bold text-gray-400 mb-4'>Search</h2>
-      <div className="w-full">
-        <UnControlledInput
-          type='text'
-          id='queryText'
-          value={queryText}
-          onChange={(event) => setQueryText(event.target.value)}
-          placeholder='Search for users with name, username...'
-          inputElementStyle='bg-gray-200 lg:text-lg rounded-full bg-gray-200'
-          icon={HiMagnifyingGlass}
-        />
+      <div className="sticky md:top-4 top-20 z-30 bg-white">
+        <h2 className='lg:text-6xl text-4xl font-bold text-gray-400 mb-4'>Search</h2>
+        <div className="w-full">
+          <UnControlledInput
+            type='text'
+            id='queryText'
+            value={queryText}
+            onChange={(event) => setQueryText(event.target.value)}
+            placeholder='Search for users with name, username...'
+            inputElementStyle='bg-gray-200 lg:text-lg rounded-full bg-gray-200'
+            icon={HiMagnifyingGlass}
+          />
+        </div>
       </div>
       {searchResults && searchResults.length === 0 && 
         <EmptyState message='No user with that name or username exists in the database.'/>

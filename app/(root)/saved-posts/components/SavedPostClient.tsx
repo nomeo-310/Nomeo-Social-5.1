@@ -13,7 +13,7 @@ type savedPostClientProps = {
 const SavedPostClient = ({savedPost, currentUser}: savedPostClientProps) => {
   return (
     <React.Fragment>
-      <h2 className='lg:text-6xl text-4xl font-bold text-gray-400 mb-4'>Saved Posts</h2>
+      <h2 className='lg:text-6xl text-4xl font-bold text-gray-400 mb-4 sticky md:top-4 top-20 z-30 bg-white'>Saved Posts</h2>
       { savedPost && savedPost.length === 0 &&
         <EmptyState message='No saved post yet'/> 
       }

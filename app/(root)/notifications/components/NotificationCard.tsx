@@ -48,7 +48,7 @@ const NotificationCard = ({index, active, notification}: notificationCardProps) 
           </div>
         }
         <div className="grow">
-          <p className={active ? 'text-blue-500 lg:text-lg line-clamp-1': 'text-gray-400 lg:text-lg line-clamp-1'}>
+          <p className={active ? 'text-blue-500 line-clamp-1': 'text-gray-400 line-clamp-1'}>
           {!notification.isBarred && <span className={active ? 'font-semibold text-blue-500': 'font-semibold text-black'}>{notificationCreatedBy.name}</span>} 
             <Link href={`/profile/${notificationCreatedBy._id}`} className={active ? 'underline text-blue-500 ml-2': 'underline text-black ml-2'}>{!notification.isBarred && notificationCreatedBy.username}</Link>
             { 
@@ -60,7 +60,7 @@ const NotificationCard = ({index, active, notification}: notificationCardProps) 
               notification.isLiked ? <span className='ml-2'>liked your post</span> : ''
             }
           </p>
-          <p className='lg:text-xl text-lg'><Link href={`/post/${post._id}`} className={active ? 'text-blue-500 line-clamp-1 mt-1 underline': 'line-clamp-1 mt-1 underline'}>&ldquo;{post.postText }&rdquo;</Link></p>
+          <p className=''><Link href={`/post/${post._id}`} className={active ? 'text-blue-500 line-clamp-1 mt-1 underline': 'line-clamp-1 mt-1 underline'}>&ldquo;{post.postText }&rdquo;</Link></p>
         </div>
         <button className='p-2 rounded-full bg-red-300 absolute right-2 lg:top-3 top-2 opacity-0 group-hover:opacity-100 hover:scale-110' onClick={() => deleteNotification(notification._id)}>
           <HiOutlineTrash size={18} />

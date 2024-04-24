@@ -134,7 +134,7 @@ const NavigationClient = ({currentUser, notificationCount}: navigationClientProp
         <SearchBar/>
         <NavigationMenu/>
       </div>
-      <div >
+      <div>
         <div className="md:hidden flex items-center justify-between mb-3 z-30">
           <SearchBar/>
           <div className='flex items-center gap-3'>

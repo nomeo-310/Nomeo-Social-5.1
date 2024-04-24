@@ -1,10 +1,10 @@
 import React from 'react'
-import Card from '@/components/Card';
 import ImageAvatar from '@/components/ImageAvatar';
 import { BsBriefcase, BsGeoAlt, BsPerson} from 'react-icons/bs';
 import FollowButton from '@/components/FollowButton';
-import { followDataProps, rawUserData } from '@/types';
+import { followDataProps } from '@/types';
 import AnimationWrapper from '@/components/AnimationWrapper';
+import Link from 'next/link';
 
 type friendCardsProps = {
   currentUser: any
@@ -30,10 +30,10 @@ const FriendCard = ({currentUser, user, index}: friendCardsProps) => {
               Location : {user.state}, {user.country}.
             </div>
             <div className='w-full flex flex-col md:flex-row justify-between'>
-              <div className='flex gap-2 text-gray-400 capitalize items-center'>
+              <Link className='flex gap-2 text-gray-400 capitalize items-center' href={`/profile/${user._id}`}>
                 <BsPerson size={18}/>
-                Name : {user.name}
-              </div>
+                Name : <span className='underline'>{user.name}</span>
+              </Link>
               <div>
                 <FollowButton currentUser={currentUser} userId={user._id} className='md:-mt-4 mb-0'/>
               </div>

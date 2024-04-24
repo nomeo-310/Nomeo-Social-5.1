@@ -71,6 +71,7 @@ const CreatePost = ({currentUser}: createPostProps) => {
     setImageFile(null);
     setImageUrls({...imageUrls, secure_url: ''});
     setImageSelected(false);
+    setCheckedIn(false)
   }
 
   React.useEffect(() => {
