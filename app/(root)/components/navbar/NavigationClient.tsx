@@ -114,16 +114,16 @@ const NavigationClient = ({currentUser, notificationCount}: navigationClientProp
     )
   };
 
-  const MobileNavigationItem = ({href, active, icon: Icon, label}: {href:string, active:boolean, icon:IconType, label:string}) => {
+  const MobileNavigationItem = ({href, active, icon: Icon, count}: {href:string, active:boolean, icon:IconType, count?: number}) => {
     const handleClick =(href:string) => {
       route.push(href);
       setShowMobileMenu(false);
     }
 
     return (
-      <button onClick={() => handleClick(href)} className={twMerge('flex items-center gap-2 hover:text-green-600 text-gray-400', ( active && 'group p-2 rounded-full text-white bg-green-600 hover:bg-green-600 hover:text-white'))}>
+      <button onClick={() => handleClick(href)} className={twMerge('flex items-center hover:text-green-600 text-gray-400 p-2 gap-1', ( active && 'group p-2 rounded-full text-white bg-green-600 hover:bg-green-600 hover:text-white'))}>
         <Icon size={21}/>
-        <h2 className='font-semibold'>{label}</h2>
+        { count && count > 0  && count !== 0 && <div >{ count === 0 ? '' : count > 0 ? count : null }</div> }
       </button>
     )
   }
@@ -134,9 +134,29 @@ const NavigationClient = ({currentUser, notificationCount}: navigationClientProp
         <SearchBar/>
         <NavigationMenu/>
       </div>
-      <div>
-        <div className="md:hidden flex items-center justify-between mb-3 z-30">
-          <SearchBar/>
+      <div className="md:hidden z-30">
+        <div className="flex items-center justify-between gap-2">
+          <Card className='p-2.5 md:hidden rounded-full w-fit mx-auto flex items-center'>
+            <div className='flex items-center pr-2.5 gap-1'>
+              {navigation.map((item:any, index:number) => (
+                <MobileNavigationItem 
+                  href={item.href} 
+                  icon={item.icon} 
+                  key={index} 
+                  active={item.href === currentPath}
+                  count={
+                    item.href === '/notification' ? (notificationCount > 0 ? notificationCount : undefined) : 
+                    item.href === '/saved-posts' ? (currentUser?.totalSavedPosts > 0 ? currentUser?.totalSavedPosts : undefined) : 
+                    item.href === '/friends' ? (currentUser?.totalFollowers ? currentUser?.totalFollowers : undefined) : undefined
+                  }
+                />
+                )
+              )}
+            </div>
+            <div className="border-l pl-2.5 pr-1">
+              <HiOutlineMagnifyingGlass size={24} onClick={() => route.push('/search')}/>
+            </div>
+          </Card>
           <div className='flex items-center gap-3'>
             <ImageAvatar className='hover:opacity-75 w-12 h-12 cursor-pointer' onClick={() =>route.push(`/profile/${currentUser?._id}`)} imageSrc={currentUser?.image}/>
             <button className='flex items-center gap-x-2 bg-white py-3 px-6 rounded-full shadow-md hover:bg-green-600 hover:text-white border-green-600' onClick={() =>signOut()}>
@@ -145,15 +165,6 @@ const NavigationClient = ({currentUser, notificationCount}: navigationClientProp
             </button>
           </div>
         </div>
-        { showMobileMenu &&
-          <Card className='p-2 md:hidden rounded-full'>
-            <div className='flex items-center justify-between'>
-              {navigation.map((item:any, index:number) => (
-                <MobileNavigationItem href={item.href} icon={item.icon} key={index} active={item.href === currentPath} label={item.label}/>)
-              )}
-            </div>
-          </Card>
-        }
       </div>
     </React.Fragment>
   )

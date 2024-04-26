@@ -19,7 +19,7 @@ type profileHeaderProps = {
 
 const ProfileHeader = ({user, userLoggedIn, currentUser,activeTab, handleClick}: profileHeaderProps) => {
   return (
-    <Card className='p-0 lg:p-0 overflow-hidden'>
+    <Card className='p-0 lg:p-0 overflow-hidden mt-2 md:mt-0'>
       <div className="w-full relative bg-gray-300 rounded-md aspect-video lg:h-60 h-44 flex items-center justify-center">
         <Image src={user.coverImage.secure_url !== '' ? user.coverImage.secure_url : '/images/defaultCoverImage.jpg'} alt='default_banner' fill className='object-cover' priority/>
       </div>

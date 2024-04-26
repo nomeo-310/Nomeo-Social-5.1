@@ -172,7 +172,7 @@ const EditProfileClient = ({currentUser}: editProileProps) => {
 
   return (
     <React.Fragment>
-      <Card className='p-0 lg:p-0 overflow-hidden'>
+      <Card className='p-0 lg:p-0 overflow-hidden mt-2 md:mt-0'>
         <div className='relative'>
           <label htmlFor='uploadCoverImage' className="w-full relative bg-gray-300 rounded-md aspect-video lg:h-72 h-52 flex items-center justify-center cursor-pointer">
             { newCoverImage.secure_url ? (

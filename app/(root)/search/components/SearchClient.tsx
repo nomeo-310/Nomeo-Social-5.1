@@ -27,7 +27,7 @@ const SearchClient = ({searchResults, currentUser}:{searchResults:rawUserData[],
 
   return (
     <React.Fragment>
-      <div className="sticky md:top-4 top-20 z-30 bg-white">
+      <div className="sticky md:top-4 top-24 z-30 bg-white">
         <h2 className='lg:text-6xl text-4xl font-bold text-gray-400 mb-4'>Search</h2>
         <div className="w-full">
           <UnControlledInput

@@ -126,7 +126,7 @@ const CreatePost = ({currentUser}: createPostProps) => {
   };
 
   return (
-    <Card className='sticky md:top-4 top-20 z-30'> 
+    <Card className='sticky md:top-4 top-24 z-30'> 
       <div className="flex flex-col">
         {imageUrls.secure_url &&
           <div className="w-full aspect-video relative rounded-md overflow-hidden mb-3">
