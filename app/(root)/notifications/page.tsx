@@ -11,13 +11,13 @@ export const metadata: Metadata = {
 };
 
 const NotificationsPage = async() => {
-  const notifications = await fetchNotifications();
-
   const session = await getCurrentSession();
   
   if (!session?.user?.email) {
     redirect('/sign-in')
   }
+
+  const notifications = await fetchNotifications();
 
   return <NotificationClient notifications={notifications} />;
 };

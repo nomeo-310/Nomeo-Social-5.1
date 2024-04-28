@@ -3,7 +3,7 @@
 import React from 'react'
 import Card from '@/components/Card'
 import NavigationItem from './NavigationItem'
-import { HiOutlineHome, HiOutlineUserGroup, HiOutlineBookmark, HiOutlineBell, HiArrowLeftOnRectangle, HiOutlineMagnifyingGlass, HiBars3 } from "react-icons/hi2"
+import { HiOutlineHome, HiOutlineUserGroup, HiOutlineBookmark, HiOutlineBell, HiArrowLeftOnRectangle, HiOutlineMagnifyingGlass, HiBars3, HiPower } from "react-icons/hi2"
 import { usePathname, useRouter } from 'next/navigation'
 import ImageAvatar from '@/components/ImageAvatar'
 import { IconType } from 'react-icons'
@@ -123,7 +123,7 @@ const NavigationClient = ({currentUser, notificationCount}: navigationClientProp
     return (
       <button onClick={() => handleClick(href)} className={twMerge('flex items-center hover:text-green-600 text-gray-400 p-2 gap-1', ( active && 'group p-2 rounded-full text-white bg-green-600 hover:bg-green-600 hover:text-white'))}>
         <Icon size={21}/>
-        { count && count > 0  && count !== 0 && <div >{ count === 0 ? '' : count > 0 ? count : null }</div> }
+        { count && count > 0  && count !== 0 && <div>{ count === 0 ? '' : count > 0 ? count : null }</div> }
       </button>
     )
   }
@@ -145,7 +145,7 @@ const NavigationClient = ({currentUser, notificationCount}: navigationClientProp
                   key={index} 
                   active={item.href === currentPath}
                   count={
-                    item.href === '/notification' ? (notificationCount > 0 ? notificationCount : undefined) : 
+                    item.href === '/notifications' ? (notificationCount > 0 ? notificationCount : undefined) : 
                     item.href === '/saved-posts' ? (currentUser?.totalSavedPosts > 0 ? currentUser?.totalSavedPosts : undefined) : 
                     item.href === '/friends' ? (currentUser?.totalFollowers ? currentUser?.totalFollowers : undefined) : undefined
                   }
@@ -159,9 +159,8 @@ const NavigationClient = ({currentUser, notificationCount}: navigationClientProp
           </Card>
           <div className='flex items-center gap-3'>
             <ImageAvatar className='hover:opacity-75 w-12 h-12 cursor-pointer' onClick={() =>route.push(`/profile/${currentUser?._id}`)} imageSrc={currentUser?.image}/>
-            <button className='flex items-center gap-x-2 bg-white py-3 px-6 rounded-full shadow-md hover:bg-green-600 hover:text-white border-green-600' onClick={() =>signOut()}>
-              <p className='font-semibold'>Signout</p>
-              <HiArrowLeftOnRectangle size={26}/>
+            <button className='bg-red-400 p-2 rounded-full shadow-md hover:bg-red-300 text-white' onClick={() =>signOut()}>
+              <HiPower size={26} />
             </button>
           </div>
         </div>

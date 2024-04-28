@@ -7,7 +7,6 @@ import { notificationProps } from '@/types'
 import EmptyState from '@/components/EmptyState'
 import { usePathname } from 'next/navigation'
 import { clearAllNotifications, seenNotification } from '@/actions/notification.actions'
-import { BsTrash2 } from 'react-icons/bs'
 import { HiOutlineTrash } from 'react-icons/hi2'
 import { toast } from 'sonner'
 
@@ -56,11 +55,15 @@ const NotificationClient = ({notifications}:{notifications: notificationProps[]}
       </div>
       { notifications && notifications.length === 0 ?
         <EmptyState message='No notifications yet'/> :
-        <Card>
-          { notifications && notifications.length > 0 && notifications.map((notification:notificationProps, index:number) => (
-            <NotificationCard  key={index} index={index} notification={notification} active={!notification.notificationSeen}/>
-          ))}
-        </Card>
+        <React.Fragment>
+          { notifications && notifications.length > 0 && 
+            <Card>
+              { notifications.map((notification:notificationProps, index:number) => (
+                <NotificationCard  key={index} index={index} notification={notification} active={!notification.notificationSeen}/>
+              ))}
+            </Card>
+          }
+        </React.Fragment>
       }
     </React.Fragment>
   )
